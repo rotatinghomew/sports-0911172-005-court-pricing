@@ -7,12 +7,13 @@ from .capacity import Capacity
 from .tariffs import Tariffs
 from .booking import Booking
 from .payments import Payments
+from .analysis import Analysis
 
 
 class Application:
     def __init__(self, path=':memory:'):
         self.store=Store(path)
-        self.services={'capacity':Capacity(self.store),'tariffs':Tariffs(self.store),'booking':Booking(self.store),'payments':Payments(self.store)}
+        self.services={'capacity':Capacity(self.store),'tariffs':Tariffs(self.store),'booking':Booking(self.store),'payments':Payments(self.store),'analysis':Analysis(self.store)}
 
     def execute(self, command, arguments):
         service, separator, operation=command.partition('.')
