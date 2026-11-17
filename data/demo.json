@@ -1,0 +1,68 @@
+[
+  [
+    "capacity.open",
+    {
+      "id": "19",
+      "count": 2,
+      "member_reserved": 1
+    }
+  ],
+  [
+    "tariffs.propose",
+    {
+      "id": "old",
+      "prices": {
+        "19": 10000
+      },
+      "reason": "常规价"
+    }
+  ],
+  [
+    "tariffs.publish",
+    {
+      "id": "old"
+    }
+  ],
+  [
+    "booking.quote",
+    {
+      "id": "q1",
+      "person": "p1",
+      "slot": "19",
+      "expires": "2026-10-18",
+      "party": "f1",
+      "rain": true
+    }
+  ],
+  [
+    "tariffs.propose",
+    {
+      "id": "new",
+      "prices": {
+        "19": 12000
+      },
+      "reason": "人工节日价"
+    }
+  ],
+  [
+    "tariffs.publish",
+    {
+      "id": "new"
+    }
+  ],
+  [
+    "booking.reserve",
+    {
+      "id": "b1",
+      "quote": "q1",
+      "at": "2026-10-17"
+    }
+  ],
+  [
+    "payments.capture",
+    {
+      "id": "p1",
+      "booking": "b1"
+    }
+  ]
+]
